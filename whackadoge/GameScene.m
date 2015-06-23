@@ -11,6 +11,7 @@
 @interface GameScene () <SKPhysicsContactDelegate>
 @property (nonatomic, strong) SKLabelNode *scoreBoard;
 @property (nonatomic) NSUInteger score;
+@property (nonatomic, strong) NSMutableArray *explosionTextures;
 
 @end
 
@@ -31,7 +32,7 @@ static const uint8_t dogeCategory = 2;
     self = [super initWithSize:size];
     if (self){
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnSpaceship"];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:3]]]] withKey:@"spawnSpaceship"];
         _scoreBoard = [[SKLabelNode alloc]init];
         _scoreBoard.position = CGPointMake(self.size.width/2, self.size.height - 40);
         _scoreBoard.fontColor = [UIColor whiteColor];
@@ -39,6 +40,16 @@ static const uint8_t dogeCategory = 2;
         
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
+        
+        // Load Textures
+        
+        SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
+        NSArray *textureNames = [explosionAtlas textureNames];
+        _explosionTextures = [NSMutableArray new];
+        for (NSString *name in textureNames) {
+            SKTexture *texture = [explosionAtlas textureNamed:name];
+            [_explosionTextures addObject:texture];
+        }
         
         [self addChild:_scoreBoard];
     }
@@ -119,6 +130,18 @@ static const uint8_t dogeCategory = 2;
         SKNode *doge = (contact.bodyA.categoryBitMask & spaceshipCategory) ? contact.bodyB.node : contact.bodyA.node;
         [spaceship runAction:[SKAction removeFromParent]];
         [doge runAction:[SKAction removeFromParent]];
+        
+        // add explosions
+        SKSpriteNode *explosion = [SKSpriteNode spriteNodeWithTexture:[_explosionTextures objectAtIndex:0]];
+        explosion.zPosition = 1;
+        explosion.scale = 0.6;
+        explosion.position = contact.bodyA.node.position;
+        
+        [self addChild:explosion];
+        
+        SKAction *explosionAction = [SKAction animateWithTextures:_explosionTextures timePerFrame:0.05];
+        SKAction *remove = [SKAction removeFromParent];
+        [explosion runAction:[SKAction sequence:@[explosionAction,remove]]];
     }
 }
 

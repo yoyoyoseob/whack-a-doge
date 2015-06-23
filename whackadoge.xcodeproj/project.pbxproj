@@ -16,6 +16,7 @@
 		7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7F21B39962D008211D8 /* LaunchScreen.xib */; };
 		7157F8001B39962E008211D8 /* whackadogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7FF1B39962E008211D8 /* whackadogeTests.m */; };
 		7157F80B1B399A4D008211D8 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F80A1B399A4D008211D8 /* GameScene.m */; };
+		7157F80D1B3A109D008211D8 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7157F7FF1B39962E008211D8 /* whackadogeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whackadogeTests.m; sourceTree = "<group>"; };
 		7157F8091B399A4D008211D8 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		7157F80A1B399A4D008211D8 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = EXPLOSION.atlas; path = "../../../Downloads/Code 2/AirPlanesGame/AirPlanesGame/EXPLOSION.atlas"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		7157F7E11B39962D008211D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
 				7157F7E31B39962D008211D8 /* main.m */,
 			);
@@ -209,6 +212,7 @@
 			files = (
 				7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */,
 				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
+				7157F80D1B3A109D008211D8 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
 				7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */,
 			);
@@ -428,6 +432,7 @@
 				7157F8051B39962E008211D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7157F8061B39962E008211D8 /* Build configuration list for PBXNativeTarget "whackadogeTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +441,7 @@
 				7157F8081B39962E008211D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
