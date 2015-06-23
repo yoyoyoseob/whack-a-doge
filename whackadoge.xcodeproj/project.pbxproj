@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
+		7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E61B39962D008211D8 /* AppDelegate.m */; };
+		7157F7E91B39962D008211D8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7E81B39962D008211D8 /* art.scnassets */; };
+		7157F7EC1B39962D008211D8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7EB1B39962D008211D8 /* GameViewController.m */; };
+		7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7ED1B39962D008211D8 /* Main.storyboard */; };
+		7157F7F11B39962D008211D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7F01B39962D008211D8 /* Images.xcassets */; };
+		7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7F21B39962D008211D8 /* LaunchScreen.xib */; };
+		7157F8001B39962E008211D8 /* whackadogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7FF1B39962E008211D8 /* whackadogeTests.m */; };
+		7157F80B1B399A4D008211D8 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F80A1B399A4D008211D8 /* GameScene.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7157F7FA1B39962E008211D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7157F7D61B39962D008211D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7157F7DD1B39962D008211D8;
+			remoteInfo = whackadoge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7157F7DE1B39962D008211D8 /* whackadoge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whackadoge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7157F7E21B39962D008211D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7157F7E31B39962D008211D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7157F7E51B39962D008211D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7157F7E61B39962D008211D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7157F7E81B39962D008211D8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		7157F7EA1B39962D008211D8 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		7157F7EB1B39962D008211D8 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		7157F7EE1B39962D008211D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7157F7F01B39962D008211D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7157F7F31B39962D008211D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7157F7F91B39962E008211D8 /* whackadogeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whackadogeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7157F7FE1B39962E008211D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7157F7FF1B39962E008211D8 /* whackadogeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whackadogeTests.m; sourceTree = "<group>"; };
+		7157F8091B399A4D008211D8 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		7157F80A1B399A4D008211D8 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7157F7DB1B39962D008211D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7157F7F61B39962E008211D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7157F7D51B39962D008211D8 = {
+			isa = PBXGroup;
+			children = (
+				7157F7E01B39962D008211D8 /* whackadoge */,
+				7157F7FC1B39962E008211D8 /* whackadogeTests */,
+				7157F7DF1B39962D008211D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7157F7DF1B39962D008211D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7157F7DE1B39962D008211D8 /* whackadoge.app */,
+				7157F7F91B39962E008211D8 /* whackadogeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7157F7E01B39962D008211D8 /* whackadoge */ = {
+			isa = PBXGroup;
+			children = (
+				7157F7E51B39962D008211D8 /* AppDelegate.h */,
+				7157F7E61B39962D008211D8 /* AppDelegate.m */,
+				7157F7E81B39962D008211D8 /* art.scnassets */,
+				7157F7EA1B39962D008211D8 /* GameViewController.h */,
+				7157F7EB1B39962D008211D8 /* GameViewController.m */,
+				7157F8091B399A4D008211D8 /* GameScene.h */,
+				7157F80A1B399A4D008211D8 /* GameScene.m */,
+				7157F7ED1B39962D008211D8 /* Main.storyboard */,
+				7157F7F01B39962D008211D8 /* Images.xcassets */,
+				7157F7F21B39962D008211D8 /* LaunchScreen.xib */,
+				7157F7E11B39962D008211D8 /* Supporting Files */,
+			);
+			path = whackadoge;
+			sourceTree = "<group>";
+		};
+		7157F7E11B39962D008211D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7157F7E21B39962D008211D8 /* Info.plist */,
+				7157F7E31B39962D008211D8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7157F7FC1B39962E008211D8 /* whackadogeTests */ = {
+			isa = PBXGroup;
+			children = (
+				7157F7FF1B39962E008211D8 /* whackadogeTests.m */,
+				7157F7FD1B39962E008211D8 /* Supporting Files */,
+			);
+			path = whackadogeTests;
+			sourceTree = "<group>";
+		};
+		7157F7FD1B39962E008211D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7157F7FE1B39962E008211D8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7157F7DD1B39962D008211D8 /* whackadoge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7157F8031B39962E008211D8 /* Build configuration list for PBXNativeTarget "whackadoge" */;
+			buildPhases = (
+				7157F7DA1B39962D008211D8 /* Sources */,
+				7157F7DB1B39962D008211D8 /* Frameworks */,
+				7157F7DC1B39962D008211D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = whackadoge;
+			productName = whackadoge;
+			productReference = 7157F7DE1B39962D008211D8 /* whackadoge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7157F7F81B39962E008211D8 /* whackadogeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7157F8061B39962E008211D8 /* Build configuration list for PBXNativeTarget "whackadogeTests" */;
+			buildPhases = (
+				7157F7F51B39962E008211D8 /* Sources */,
+				7157F7F61B39962E008211D8 /* Frameworks */,
+				7157F7F71B39962E008211D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7157F7FB1B39962E008211D8 /* PBXTargetDependency */,
+			);
+			name = whackadogeTests;
+			productName = whackadogeTests;
+			productReference = 7157F7F91B39962E008211D8 /* whackadogeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7157F7D61B39962D008211D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Yoseob Lee";
+				TargetAttributes = {
+					7157F7DD1B39962D008211D8 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					7157F7F81B39962E008211D8 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 7157F7DD1B39962D008211D8;
+					};
+				};
+			};
+			buildConfigurationList = 7157F7D91B39962D008211D8 /* Build configuration list for PBXProject "whackadoge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7157F7D51B39962D008211D8;
+			productRefGroup = 7157F7DF1B39962D008211D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7157F7DD1B39962D008211D8 /* whackadoge */,
+				7157F7F81B39962E008211D8 /* whackadogeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7157F7DC1B39962D008211D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */,
+				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
+				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
+				7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7157F7F71B39962E008211D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7157F7DA1B39962D008211D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */,
+				7157F7EC1B39962D008211D8 /* GameViewController.m in Sources */,
+				7157F80B1B399A4D008211D8 /* GameScene.m in Sources */,
+				7157F7E41B39962D008211D8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7157F7F51B39962E008211D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7157F8001B39962E008211D8 /* whackadogeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7157F7FB1B39962E008211D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7157F7DD1B39962D008211D8 /* whackadoge */;
+			targetProxy = 7157F7FA1B39962E008211D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7157F7ED1B39962D008211D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7157F7EE1B39962D008211D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7157F7F21B39962D008211D8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7157F7F31B39962D008211D8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7157F8011B39962E008211D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7157F8021B39962E008211D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7157F8041B39962E008211D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = whackadoge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7157F8051B39962E008211D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = whackadoge/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7157F8071B39962E008211D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = whackadogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whackadoge.app/whackadoge";
+			};
+			name = Debug;
+		};
+		7157F8081B39962E008211D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = whackadogeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/whackadoge.app/whackadoge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7157F7D91B39962D008211D8 /* Build configuration list for PBXProject "whackadoge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7157F8011B39962E008211D8 /* Debug */,
+				7157F8021B39962E008211D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7157F8031B39962E008211D8 /* Build configuration list for PBXNativeTarget "whackadoge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7157F8041B39962E008211D8 /* Debug */,
+				7157F8051B39962E008211D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7157F8061B39962E008211D8 /* Build configuration list for PBXNativeTarget "whackadogeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7157F8071B39962E008211D8 /* Debug */,
+				7157F8081B39962E008211D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7157F7D61B39962D008211D8 /* Project object */;
+}
