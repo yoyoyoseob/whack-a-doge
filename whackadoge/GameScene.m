@@ -8,7 +8,7 @@
 
 #import "GameScene.h"
 
-@interface GameScene ()
+@interface GameScene () <SKPhysicsContactDelegate>
 @property (nonatomic, strong) SKLabelNode *scoreBoard;
 @property (nonatomic) NSUInteger score;
 
@@ -20,6 +20,9 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
 }
 
+static const uint8_t spaceshipCategory = 1;
+static const uint8_t dogeCategory = 2;
+
 @implementation GameScene
 
 #pragma mark - Game Setup
@@ -27,12 +30,15 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 {
     self = [super initWithSize:size];
     if (self){
-        //[self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:5]]]] withKey:@"spawnSpaceship"];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnSpaceship"];
         _scoreBoard = [[SKLabelNode alloc]init];
         _scoreBoard.position = CGPointMake(self.size.width/2, self.size.height - 40);
         _scoreBoard.fontColor = [UIColor whiteColor];
         _scoreBoard.fontSize = 20;
+        
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
         
         [self addChild:_scoreBoard];
     }
@@ -44,6 +50,12 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     SKSpriteNode *doge = [SKSpriteNode spriteNodeWithImageNamed:@"doge"];
     doge.size = CGSizeMake(65, 68.9);
     doge.position = CGPointMake(RandomRange(0, self.size.width), RandomRange(0, self.size.height - 55));
+    
+    doge.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:doge.size];
+    doge.physicsBody.dynamic = YES;
+    doge.physicsBody.categoryBitMask = dogeCategory;
+    doge.physicsBody.contactTestBitMask = spaceshipCategory;
+    doge.physicsBody.collisionBitMask = 0;
     
     doge.name = @"doge";
     doge.xScale = 0; // We set the x/y scale to 0 to make them invisible, used for animation to "spawn" doge (gets bigger from 0 to 1)
@@ -63,17 +75,51 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 {
     SKSpriteNode *spaceship = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
     spaceship.size = CGSizeMake(50, 44); // Default size is 394 x 347
-    spaceship.position = CGPointMake(-50, RandomRange(0, self.size.height));
+    
+    CGPoint startLocation = CGPointMake(-50, RandomRange(0, self.size.height));
+    spaceship.position = startLocation;
+    
+    spaceship.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:spaceship.size];
+    spaceship.physicsBody.dynamic = NO;
+    spaceship.physicsBody.categoryBitMask = spaceshipCategory;
+    spaceship.physicsBody.contactTestBitMask = dogeCategory;
+    spaceship.physicsBody.collisionBitMask = 0;
     
     spaceship.name = @"spaceship";
     [self addChild:spaceship];
     
-    CGPoint destination = CGPointMake(self.size.width, RandomRange(0, self.size.height));
+    CGPoint endLocation = CGPointMake(self.size.width + 50, RandomRange(0, self.size.height)); // Where the ship will end up
     
-//    SKAction *rotate = [SKAction rota]
-//    SKAction *flyBy = [SKAction moveTo:destination duration:5];
-//    SKAction *removeFromParent = [SKAction removeFromParent];
-//    [spaceship runAction:[SKAction sequence:@[flyBy, removeFromParent]]];
+    CGFloat angle = atan2(startLocation.y - endLocation.y, startLocation.x - endLocation.x);
+    
+    SKAction *rotate = [SKAction rotateToAngle:(angle + M_PI_2) duration:1];
+    
+    SKAction *flyBy = [SKAction moveTo:endLocation duration:5];
+    SKAction *removeFromParent = [SKAction removeFromParent];
+    [spaceship runAction:[SKAction sequence:@[rotate, flyBy, removeFromParent]]];
+}
+
+-(void) didBeginContact:(SKPhysicsContact *)contact
+{
+    SKPhysicsBody *firstBody;
+    SKPhysicsBody *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    }
+    else{
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if ((firstBody.categoryBitMask & spaceshipCategory) != 0){
+        
+        SKNode *spaceship = (contact.bodyA.categoryBitMask & spaceshipCategory) ? contact.bodyA.node : contact.bodyB.node;
+        SKNode *doge = (contact.bodyA.categoryBitMask & spaceshipCategory) ? contact.bodyB.node : contact.bodyA.node;
+        [spaceship runAction:[SKAction removeFromParent]];
+        [doge runAction:[SKAction removeFromParent]];
+    }
 }
 
 
