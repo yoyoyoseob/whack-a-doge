@@ -16,7 +16,6 @@
 		7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7F21B39962D008211D8 /* LaunchScreen.xib */; };
 		7157F8001B39962E008211D8 /* whackadogeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7FF1B39962E008211D8 /* whackadogeTests.m */; };
 		7157F80B1B399A4D008211D8 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F80A1B399A4D008211D8 /* GameScene.m */; };
-		7157F80D1B3A109D008211D8 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */; };
 		715C1CDE1B3B587300BC51B3 /* MYDoge.m in Sources */ = {isa = PBXBuildFile; fileRef = 715C1CDD1B3B587300BC51B3 /* MYDoge.m */; };
 		715C1CE31B3B764B00BC51B3 /* MYSpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 715C1CE21B3B764B00BC51B3 /* MYSpaceship.m */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		7157F7FF1B39962E008211D8 /* whackadogeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = whackadogeTests.m; sourceTree = "<group>"; };
 		7157F8091B399A4D008211D8 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = whackadoge/GameScene.h; sourceTree = "<group>"; };
 		7157F80A1B399A4D008211D8 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = whackadoge/GameScene.m; sourceTree = "<group>"; };
-		7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = EXPLOSION.atlas; path = "../../../Downloads/Code 2/AirPlanesGame/AirPlanesGame/EXPLOSION.atlas"; sourceTree = "<group>"; };
 		715C1CDC1B3B587300BC51B3 /* MYDoge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYDoge.h; sourceTree = "<group>"; };
 		715C1CDD1B3B587300BC51B3 /* MYDoge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYDoge.m; sourceTree = "<group>"; };
 		715C1CE11B3B764B00BC51B3 /* MYSpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSpaceship.h; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		7157F7E11B39962D008211D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7157F80C1B3A109D008211D8 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
 				7157F7E31B39962D008211D8 /* main.m */,
 			);
@@ -246,7 +243,6 @@
 			files = (
 				7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */,
 				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
-				7157F80D1B3A109D008211D8 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
 				7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */,
 			);
