@@ -23,12 +23,14 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 -(instancetype)initWithImageNamed:(NSString *)name width:(CGFloat)width height:(CGFloat)height
 {
     self = [super initWithImageNamed:name];
-    if (self){
+    if (self)
+    {
         _width = width;
         _height = height;
         
         self.size = CGSizeMake(65, 68.9);
         self.position = CGPointMake(RandomRange(0, _width), RandomRange(0, _height - 55));
+        self.zPosition = 1;
         
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         self.physicsBody.dynamic = YES;

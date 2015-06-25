@@ -10,10 +10,12 @@
 #import "MYDoge.h"
 #import "MYSpaceship.h"
 #import "MYScoreboard.h"
+#import "MYBackground.h"
 
 @interface GameScene () <SKPhysicsContactDelegate>
 @property (nonatomic, strong) NSMutableArray *explosionTextures;
 @property (nonatomic, strong) MYScoreboard *scoreboard;
+@property (nonatomic, strong) MYBackground *background;
 
 @end
 
@@ -24,11 +26,6 @@
 {
     self = [super initWithSize:size];
     if (self){
-
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
-        
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnSpaceship"];
-        
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
@@ -36,6 +33,14 @@
         _scoreboard = [[MYScoreboard alloc]initWithWidth:self.size.width height:self.size.height];
         [self addChild:_scoreboard];
         _scoreboard.text = [NSString stringWithFormat:@"Score: %lu", _scoreboard.score];
+        
+        
+        _background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
+        [self addChild:_background];
+        
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
+        
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnSpaceship"];
         
         // Load Textures
         SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
@@ -107,10 +112,14 @@
     
     SKNode *node = [self nodeAtPoint:touchPoint]; // Returns the node at touch
     
+//    SKAction *zoomIn = [SKAction scaleTo:1.67 duration:10];
+//    [self.background runAction:zoomIn];
+    
     if ([node containsPoint:touchPoint]){
         [node removeFromParent];
         self.scoreboard.score ++;
         self.scoreboard.text = [NSString stringWithFormat:@"Score: %lu", self.scoreboard.score];
+
     }
 }
 

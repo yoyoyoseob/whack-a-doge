@@ -24,13 +24,15 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 
 -(instancetype)initWithImageNamed:(NSString *)name width:(CGFloat)width height:(CGFloat)height
 {
-    self = [super initWithImageNamed:@"Spaceship"];
-    if (self){
+    self = [super initWithImageNamed:name];
+    if (self)
+    {
         _width = width;
         _height = height;
         
         self.size = CGSizeMake(50, 44); // Default size is 394 x 347
         self.name = @"spaceship";
+        self.zPosition = 1;
         
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         self.physicsBody.dynamic = NO;
@@ -50,28 +52,32 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     NSInteger randomIndex = (NSInteger)RandomRange(0, 4);
     NSString *randomSide = self.sidesArray[randomIndex];
     
-    if ([randomSide isEqualToString:@"Top"]){
+    if ([randomSide isEqualToString:@"Top"])
+    {
         CGPoint startLocation = CGPointMake(RandomRange(0, self.width), self.height + 50);
         CGPoint endLocation = CGPointMake(RandomRange(0, self.width), -50);
         self.position = startLocation;
 
         return [self returnActionSequenceWithStartingLocation:startLocation endLocation:endLocation];
     }
-    else if ([randomSide isEqualToString:@"Bottom"]){
+    else if ([randomSide isEqualToString:@"Bottom"])
+    {
         CGPoint startLocation = CGPointMake(RandomRange(0, self.width), -50);
         CGPoint endLocation = CGPointMake(RandomRange(0, self.width), self.height + 50);
         self.position = startLocation;
         
         return [self returnActionSequenceWithStartingLocation:startLocation endLocation:endLocation];
     }
-    else if ([randomSide isEqualToString:@"Left"]){
+    else if ([randomSide isEqualToString:@"Left"])
+    {
         CGPoint startLocation = CGPointMake(-50, RandomRange(0, self.height));
         CGPoint endLocation = CGPointMake(self.width + 50, RandomRange(0, self.height));
         self.position = startLocation;
         
         return [self returnActionSequenceWithStartingLocation:startLocation endLocation:endLocation];
     }
-    else {
+    else
+    {
         CGPoint startLocation = CGPointMake(self.width + 50, RandomRange(0, self.height));
         CGPoint endLocation = CGPointMake(-50, RandomRange(0, self.height));
         self.position = startLocation;

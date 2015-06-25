@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 710300AB1B3C6F2D002B7E2E /* MYBackground.m */; };
+		710300B01B3C7779002B7E2E /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 710300AF1B3C7779002B7E2E /* Background.atlas */; };
 		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
 		7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E61B39962D008211D8 /* AppDelegate.m */; };
 		7157F7E91B39962D008211D8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7157F7E81B39962D008211D8 /* art.scnassets */; };
@@ -33,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710300AA1B3C6F2D002B7E2E /* MYBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBackground.h; sourceTree = "<group>"; };
+		710300AB1B3C6F2D002B7E2E /* MYBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBackground.m; sourceTree = "<group>"; };
+		710300AF1B3C7779002B7E2E /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
 		7157F7DE1B39962D008211D8 /* whackadoge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whackadoge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7157F7E21B39962D008211D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7157F7E31B39962D008211D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		7157F7E11B39962D008211D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				710300AF1B3C7779002B7E2E /* Background.atlas */,
 				715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
 				7157F7E31B39962D008211D8 /* main.m */,
@@ -146,6 +152,8 @@
 				715C1CE21B3B764B00BC51B3 /* MYSpaceship.m */,
 				715C1CE81B3C313B00BC51B3 /* MYScoreboard.h */,
 				715C1CE91B3C313B00BC51B3 /* MYScoreboard.m */,
+				710300AA1B3C6F2D002B7E2E /* MYBackground.h */,
+				710300AB1B3C6F2D002B7E2E /* MYBackground.m */,
 			);
 			name = Models;
 			path = ..;
@@ -253,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */,
+				710300B01B3C7779002B7E2E /* Background.atlas in Resources */,
 				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
 				715C1CE71B3B7E9900BC51B3 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
@@ -281,6 +290,7 @@
 				715C1CDE1B3B587300BC51B3 /* MYDoge.m in Sources */,
 				7157F80B1B399A4D008211D8 /* GameScene.m in Sources */,
 				7157F7E41B39962D008211D8 /* main.m in Sources */,
+				710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

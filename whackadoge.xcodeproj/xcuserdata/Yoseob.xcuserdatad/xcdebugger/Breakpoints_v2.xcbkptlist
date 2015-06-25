@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MYDoge.m"
-            timestampString = "456939570.389702"
+            timestampString = "456956358.734782"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-initWithImageNamed:width:height:"
             landmarkType = "5">
          </BreakpointContent>
