@@ -19,6 +19,7 @@
 		715C1CDE1B3B587300BC51B3 /* MYDoge.m in Sources */ = {isa = PBXBuildFile; fileRef = 715C1CDD1B3B587300BC51B3 /* MYDoge.m */; };
 		715C1CE31B3B764B00BC51B3 /* MYSpaceship.m in Sources */ = {isa = PBXBuildFile; fileRef = 715C1CE21B3B764B00BC51B3 /* MYSpaceship.m */; };
 		715C1CE71B3B7E9900BC51B3 /* EXPLOSION.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */; };
+		715C1CEA1B3C313B00BC51B3 /* MYScoreboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 715C1CE91B3C313B00BC51B3 /* MYScoreboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		715C1CE11B3B764B00BC51B3 /* MYSpaceship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSpaceship.h; sourceTree = "<group>"; };
 		715C1CE21B3B764B00BC51B3 /* MYSpaceship.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSpaceship.m; sourceTree = "<group>"; };
 		715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EXPLOSION.atlas; sourceTree = "<group>"; };
+		715C1CE81B3C313B00BC51B3 /* MYScoreboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYScoreboard.h; sourceTree = "<group>"; };
+		715C1CE91B3C313B00BC51B3 /* MYScoreboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYScoreboard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				715C1CDD1B3B587300BC51B3 /* MYDoge.m */,
 				715C1CE11B3B764B00BC51B3 /* MYSpaceship.h */,
 				715C1CE21B3B764B00BC51B3 /* MYSpaceship.m */,
+				715C1CE81B3C313B00BC51B3 /* MYScoreboard.h */,
+				715C1CE91B3C313B00BC51B3 /* MYScoreboard.m */,
 			);
 			name = Models;
 			path = ..;
@@ -271,6 +276,7 @@
 			files = (
 				715C1CE31B3B764B00BC51B3 /* MYSpaceship.m in Sources */,
 				7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */,
+				715C1CEA1B3C313B00BC51B3 /* MYScoreboard.m in Sources */,
 				7157F7EC1B39962D008211D8 /* GameViewController.m in Sources */,
 				715C1CDE1B3B587300BC51B3 /* MYDoge.m in Sources */,
 				7157F80B1B399A4D008211D8 /* GameScene.m in Sources */,
