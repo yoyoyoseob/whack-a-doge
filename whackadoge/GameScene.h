@@ -13,4 +13,6 @@
 
 @interface GameScene : SKScene
 
+@property (nonatomic)       NSUInteger      gameScore;
+
 @end

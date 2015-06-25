@@ -32,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00ED58411B3BC0240026221E /* Comic Sans MS Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS Bold.ttf"; sourceTree = "<group>"; };
+		00ED58421B3BC0240026221E /* Comic Sans MS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comic Sans MS.ttf"; sourceTree = "<group>"; };
 		7157F7DE1B39962D008211D8 /* whackadoge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whackadoge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7157F7E21B39962D008211D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7157F7E31B39962D008211D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +112,8 @@
 		7157F7E11B39962D008211D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00ED58411B3BC0240026221E /* Comic Sans MS Bold.ttf */,
+				00ED58421B3BC0240026221E /* Comic Sans MS.ttf */,
 				715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
 				7157F7E31B39962D008211D8 /* main.m */,
