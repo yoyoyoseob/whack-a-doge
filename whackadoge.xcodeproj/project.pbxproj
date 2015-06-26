@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00105B0A1B3DCDFC0051D19A /* MYGrumpyCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */; };
 		00105B451B3DF9B40051D19A /* Cutting It Fine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */; };
+		00105B491B3E02620051D19A /* ComicSansMS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00105B481B3E02620051D19A /* ComicSansMS.ttf */; };
 		710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 710300AB1B3C6F2D002B7E2E /* MYBackground.m */; };
 		710300B01B3C7779002B7E2E /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 710300AF1B3C7779002B7E2E /* Background.atlas */; };
 		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
@@ -40,6 +41,7 @@
 		00105B081B3DCDFC0051D19A /* MYGrumpyCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGrumpyCat.h; sourceTree = "<group>"; };
 		00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGrumpyCat.m; sourceTree = "<group>"; };
 		00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cutting It Fine.mp3"; sourceTree = "<group>"; };
+		00105B481B3E02620051D19A /* ComicSansMS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicSansMS.ttf; sourceTree = "<group>"; };
 		710300AA1B3C6F2D002B7E2E /* MYBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBackground.h; sourceTree = "<group>"; };
 		710300AB1B3C6F2D002B7E2E /* MYBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBackground.m; sourceTree = "<group>"; };
 		710300AF1B3C7779002B7E2E /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		7157F7E11B39962D008211D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00105B481B3E02620051D19A /* ComicSansMS.ttf */,
 				710300AF1B3C7779002B7E2E /* Background.atlas */,
 				715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
@@ -271,6 +274,7 @@
 				7157F7F41B39962D008211D8 /* LaunchScreen.xib in Resources */,
 				710300B01B3C7779002B7E2E /* Background.atlas in Resources */,
 				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
+				00105B491B3E02620051D19A /* ComicSansMS.ttf in Resources */,
 				715C1CE71B3B7E9900BC51B3 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
 				7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */,
