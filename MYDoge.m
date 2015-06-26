@@ -7,6 +7,7 @@
 //
 
 #import "MYDoge.h"
+#import "MYGrumpyCat.h"
 
 @interface MYDoge ()
 @property (nonatomic) CGFloat width;
@@ -35,7 +36,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
         self.physicsBody.dynamic = YES;
         self.physicsBody.categoryBitMask = dogeCategory;
-        self.physicsBody.contactTestBitMask = spaceshipCategory;
+        self.physicsBody.contactTestBitMask = grumpyCatCategory;
         self.physicsBody.collisionBitMask = 0;
         self.physicsBody.usesPreciseCollisionDetection = YES;
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00105B0A1B3DCDFC0051D19A /* MYGrumpyCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */; };
+		00105B451B3DF9B40051D19A /* Cutting It Fine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */; };
 		710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 710300AB1B3C6F2D002B7E2E /* MYBackground.m */; };
 		710300B01B3C7779002B7E2E /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 710300AF1B3C7779002B7E2E /* Background.atlas */; };
 		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
@@ -35,14 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00105B081B3DCDFC0051D19A /* MYGrumpyCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYGrumpyCat.h; sourceTree = "<group>"; };
+		00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGrumpyCat.m; sourceTree = "<group>"; };
+		00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cutting It Fine.mp3"; sourceTree = "<group>"; };
 		710300AA1B3C6F2D002B7E2E /* MYBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBackground.h; sourceTree = "<group>"; };
 		710300AB1B3C6F2D002B7E2E /* MYBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBackground.m; sourceTree = "<group>"; };
 		710300AF1B3C7779002B7E2E /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
 		7157F7DE1B39962D008211D8 /* whackadoge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whackadoge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7157F7E21B39962D008211D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7157F7E31B39962D008211D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7157F7E51B39962D008211D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7157F7E61B39962D008211D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7157F7E51B39962D008211D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = whackadoge/AppDelegate.h; sourceTree = "<group>"; };
+		7157F7E61B39962D008211D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = whackadoge/AppDelegate.m; sourceTree = "<group>"; };
 		7157F7E81B39962D008211D8 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		7157F7EA1B39962D008211D8 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameViewController.h; path = whackadoge/GameViewController.h; sourceTree = "<group>"; };
 		7157F7EB1B39962D008211D8 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GameViewController.m; path = whackadoge/GameViewController.m; sourceTree = "<group>"; };
@@ -105,8 +110,6 @@
 				715C1CE01B3B592100BC51B3 /* Views */,
 				715C1CDF1B3B58F500BC51B3 /* Controllers */,
 				715C1CD81B3B563500BC51B3 /* Models */,
-				7157F7E51B39962D008211D8 /* AppDelegate.h */,
-				7157F7E61B39962D008211D8 /* AppDelegate.m */,
 				7157F7E81B39962D008211D8 /* art.scnassets */,
 				7157F7F01B39962D008211D8 /* Images.xcassets */,
 				7157F7F21B39962D008211D8 /* LaunchScreen.xib */,
@@ -121,6 +124,7 @@
 				710300AF1B3C7779002B7E2E /* Background.atlas */,
 				715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
+				00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */,
 				7157F7E31B39962D008211D8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -146,6 +150,8 @@
 		715C1CD81B3B563500BC51B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7157F7E51B39962D008211D8 /* AppDelegate.h */,
+				7157F7E61B39962D008211D8 /* AppDelegate.m */,
 				715C1CDC1B3B587300BC51B3 /* MYDoge.h */,
 				715C1CDD1B3B587300BC51B3 /* MYDoge.m */,
 				715C1CE11B3B764B00BC51B3 /* MYSpaceship.h */,
@@ -154,6 +160,8 @@
 				715C1CE91B3C313B00BC51B3 /* MYScoreboard.m */,
 				710300AA1B3C6F2D002B7E2E /* MYBackground.h */,
 				710300AB1B3C6F2D002B7E2E /* MYBackground.m */,
+				00105B081B3DCDFC0051D19A /* MYGrumpyCat.h */,
+				00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */,
 			);
 			name = Models;
 			path = ..;
@@ -266,6 +274,7 @@
 				715C1CE71B3B7E9900BC51B3 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
 				7157F7EF1B39962D008211D8 /* Main.storyboard in Resources */,
+				00105B451B3DF9B40051D19A /* Cutting It Fine.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +296,7 @@
 				7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */,
 				715C1CEA1B3C313B00BC51B3 /* MYScoreboard.m in Sources */,
 				7157F7EC1B39962D008211D8 /* GameViewController.m in Sources */,
+				00105B0A1B3DCDFC0051D19A /* MYGrumpyCat.m in Sources */,
 				715C1CDE1B3B587300BC51B3 /* MYDoge.m in Sources */,
 				7157F80B1B399A4D008211D8 /* GameScene.m in Sources */,
 				7157F7E41B39962D008211D8 /* main.m in Sources */,

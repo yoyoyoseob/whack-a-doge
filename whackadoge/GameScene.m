@@ -11,11 +11,14 @@
 #import "MYSpaceship.h"
 #import "MYScoreboard.h"
 #import "MYBackground.h"
+#import "MYGrumpyCat.h"
 
 @interface GameScene () <SKPhysicsContactDelegate>
-@property (nonatomic, strong) NSMutableArray *explosionTextures;
-@property (nonatomic, strong) MYScoreboard *scoreboard;
-@property (nonatomic, strong) MYBackground *background;
+@property (nonatomic, strong)   NSMutableArray  *explosionTextures;
+@property (nonatomic, strong)   MYScoreboard    *scoreboard;
+@property (nonatomic, strong)   MYBackground    *background;
+@property (nonatomic)           CGFloat         spawnInterval;
+@property (nonatomic)           BOOL            sceneHasChanged;
 
 @end
 
@@ -29,14 +32,16 @@
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
+        self.sceneHasChanged = NO;
+        self.spawnInterval = 1.5;
         // Load Scoreboard
         _scoreboard = [[MYScoreboard alloc]initWithWidth:self.size.width height:self.size.height];
         [self addChild:_scoreboard];
         _scoreboard.text = [NSString stringWithFormat:@"Score: %lu", _scoreboard.score];
         
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:2]]]] withKey:@"spawnDoge"];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:self.spawnInterval]]]] withKey:@"spawnDoge"];
         
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:4]]]] withKey:@"spawnSpaceship"];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnGrumpyCat) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnGrumpyCat"];
         
         // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
         //_background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
@@ -57,10 +62,18 @@
 #pragma mark - Scene Update Method
 -(void)update:(NSTimeInterval)currentTime
 {
-//    if (self.scoreboard.score == 10)
-//    {
-//        [self fadeInBackground];
-//    }
+    if (self.sceneHasChanged)
+    {
+        [self spawnDogeWithInterval:self.spawnInterval];
+        self.sceneHasChanged = NO;
+    }
+}
+
+#pragma mark - Sprite Action Methods
+
+-(void)spawnDogeWithInterval:(CGFloat)spawnInterval
+{
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:spawnInterval]]]] withKey:@"spawnDoge"];
 }
 
 -(void)spawnDoge // Spawns doge in random point on the screen
@@ -79,6 +92,14 @@
     [mySpaceship runAction:mySpaceship.actionSequence];
 }
 
+-(void)spawnGrumpyCat // Spawns spaceship outside of screen bounds
+{
+    MYGrumpyCat *myGrumpyCat = [[MYGrumpyCat alloc]initWithImageNamed:@"GrumpyCatHead" width:self.size.width height:self.size.height];
+    [self addChild:myGrumpyCat];
+    
+    [myGrumpyCat runAction:myGrumpyCat.actionSequence];
+}
+
 -(void)didBeginContact:(SKPhysicsContact *)contact
 {
     SKPhysicsBody *firstBody;
@@ -94,9 +115,9 @@
     }
     if ((firstBody.categoryBitMask & spaceshipCategory) != 0){
         
-        SKNode *spaceship = (contact.bodyA.categoryBitMask & spaceshipCategory) ? contact.bodyA.node : contact.bodyB.node;
-        SKNode *doge = (contact.bodyA.categoryBitMask & spaceshipCategory) ? contact.bodyB.node : contact.bodyA.node;
-        [spaceship runAction:[SKAction removeFromParent]];
+        SKNode *grumpyCat = (contact.bodyA.categoryBitMask & grumpyCatCategory) ? contact.bodyA.node : contact.bodyB.node;
+        SKNode *doge = (contact.bodyA.categoryBitMask & grumpyCatCategory) ? contact.bodyB.node : contact.bodyA.node;
+        [grumpyCat runAction:[SKAction removeFromParent]];
         [doge runAction:[SKAction removeFromParent]];
         
         // add explosions
@@ -110,6 +131,8 @@
         SKAction *explosionAction = [SKAction animateWithTextures:_explosionTextures timePerFrame:0.05];
         SKAction *remove = [SKAction removeFromParent];
         [explosion runAction:[SKAction sequence:@[explosionAction,remove]]];
+        
+        
     }
 }
 
@@ -129,6 +152,9 @@
             self.scoreboard.score ++;
             self.scoreboard.text = [NSString stringWithFormat:@"Score: %lu", self.scoreboard.score];
             [self fadeInBackgroundWithScore:self.scoreboard.score];
+            //increment spawn interval for every succesful scoring
+            self.spawnInterval-= 0.05;
+            self.sceneHasChanged = YES;
         }
     }
 }
