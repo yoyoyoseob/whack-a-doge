@@ -37,6 +37,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         self.physicsBody.categoryBitMask = dogeCategory;
         self.physicsBody.contactTestBitMask = spaceshipCategory;
         self.physicsBody.collisionBitMask = 0;
+        self.physicsBody.usesPreciseCollisionDetection = YES;
         
         self.name = @"doge";
         self.xScale = 0; // We set the x/y scale to 0 to make them invisible, used for animation to "spawn" doge (gets bigger from 0 to 1)

@@ -39,6 +39,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         self.physicsBody.categoryBitMask = spaceshipCategory;
         self.physicsBody.contactTestBitMask = dogeCategory;
         self.physicsBody.collisionBitMask = 0;
+        self.physicsBody.usesPreciseCollisionDetection = YES;
     
         _actionSequence = [SKAction sequence:@[[self selectStartingPoint]]];
     }

@@ -34,13 +34,13 @@
         [self addChild:_scoreboard];
         _scoreboard.text = [NSString stringWithFormat:@"Score: %lu", _scoreboard.score];
         
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:2]]]] withKey:@"spawnDoge"];
         
-        _background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
-        [self addChild:_background];
+        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:4]]]] withKey:@"spawnSpaceship"];
         
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnDoge"];
-        
-        [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnSpaceship) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnSpaceship"];
+        // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
+        //_background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
+        //[self addChild:_background];
         
         // Load Textures
         SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
@@ -54,6 +54,15 @@
     return self;
 }
 
+#pragma mark - Scene Update Method
+-(void)update:(NSTimeInterval)currentTime
+{
+//    if (self.scoreboard.score == 10)
+//    {
+//        [self fadeInBackground];
+//    }
+}
+
 -(void)spawnDoge // Spawns doge in random point on the screen
 {
     MYDoge *myDoge = [[MYDoge alloc]initWithImageNamed:@"doge" width:self.size.width height:self.size.height];
@@ -62,7 +71,7 @@
     [myDoge runAction:myDoge.actionSequence];
 }
 
--(void)spawnSpaceship
+-(void)spawnSpaceship // Spawns spaceship outside of screen bounds
 {
     MYSpaceship *mySpaceship = [[MYSpaceship alloc]initWithImageNamed:@"Spaceship" width:self.size.width height:self.size.height];
     [self addChild:mySpaceship];
@@ -105,21 +114,32 @@
 }
 
 #pragma mark - Game Actions
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event // NEED TO FIGURE OUT HOW TO REMOVE SPECIFIC NODES ONLY
 {
     UITouch *touchedNode = [touches anyObject]; // Registers the touch
     CGPoint touchPoint = [touchedNode locationInNode:self]; // (x, y) of where the touch was
     
     SKNode *node = [self nodeAtPoint:touchPoint]; // Returns the node at touch
     
-//    SKAction *zoomIn = [SKAction scaleTo:1.67 duration:10];
-//    [self.background runAction:zoomIn];
-    
-    if ([node containsPoint:touchPoint]){
-        [node removeFromParent];
-        self.scoreboard.score ++;
-        self.scoreboard.text = [NSString stringWithFormat:@"Score: %lu", self.scoreboard.score];
+    if ([node containsPoint:touchPoint])
+    {
+        if ([node isKindOfClass:[MYDoge class]])
+        {
+            [node removeFromParent];
+            self.scoreboard.score ++;
+            self.scoreboard.text = [NSString stringWithFormat:@"Score: %lu", self.scoreboard.score];
+            [self fadeInBackgroundWithScore:self.scoreboard.score];
+        }
+    }
+}
 
+-(void)fadeInBackgroundWithScore:(NSInteger)score
+{
+    if (score == 10)
+    {
+        // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
+        _background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
+        [self addChild:_background];
     }
 }
 
