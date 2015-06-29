@@ -10,6 +10,7 @@
 		00105B0A1B3DCDFC0051D19A /* MYGrumpyCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */; };
 		00105B451B3DF9B40051D19A /* Cutting It Fine.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */; };
 		00105B491B3E02620051D19A /* ComicSansMS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00105B481B3E02620051D19A /* ComicSansMS.ttf */; };
+		00105B4C1B3E11BD0051D19A /* MYTrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00105B4B1B3E11BD0051D19A /* MYTrollLabel.m */; };
 		710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 710300AB1B3C6F2D002B7E2E /* MYBackground.m */; };
 		710300B01B3C7779002B7E2E /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 710300AF1B3C7779002B7E2E /* Background.atlas */; };
 		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
@@ -42,6 +43,8 @@
 		00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYGrumpyCat.m; sourceTree = "<group>"; };
 		00105B441B3DF9B40051D19A /* Cutting It Fine.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Cutting It Fine.mp3"; sourceTree = "<group>"; };
 		00105B481B3E02620051D19A /* ComicSansMS.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ComicSansMS.ttf; sourceTree = "<group>"; };
+		00105B4A1B3E11BD0051D19A /* MYTrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTrollLabel.h; sourceTree = "<group>"; };
+		00105B4B1B3E11BD0051D19A /* MYTrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTrollLabel.m; sourceTree = "<group>"; };
 		710300AA1B3C6F2D002B7E2E /* MYBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBackground.h; sourceTree = "<group>"; };
 		710300AB1B3C6F2D002B7E2E /* MYBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBackground.m; sourceTree = "<group>"; };
 		710300AF1B3C7779002B7E2E /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
@@ -111,7 +114,7 @@
 			children = (
 				715C1CE01B3B592100BC51B3 /* Views */,
 				715C1CDF1B3B58F500BC51B3 /* Controllers */,
-				715C1CD81B3B563500BC51B3 /* Models */,
+				715C1CD81B3B563500BC51B3 /* Sprites */,
 				7157F7E81B39962D008211D8 /* art.scnassets */,
 				7157F7F01B39962D008211D8 /* Images.xcassets */,
 				7157F7F21B39962D008211D8 /* LaunchScreen.xib */,
@@ -150,11 +153,9 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		715C1CD81B3B563500BC51B3 /* Models */ = {
+		715C1CD81B3B563500BC51B3 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				7157F7E51B39962D008211D8 /* AppDelegate.h */,
-				7157F7E61B39962D008211D8 /* AppDelegate.m */,
 				715C1CDC1B3B587300BC51B3 /* MYDoge.h */,
 				715C1CDD1B3B587300BC51B3 /* MYDoge.m */,
 				715C1CE11B3B764B00BC51B3 /* MYSpaceship.h */,
@@ -165,14 +166,18 @@
 				710300AB1B3C6F2D002B7E2E /* MYBackground.m */,
 				00105B081B3DCDFC0051D19A /* MYGrumpyCat.h */,
 				00105B091B3DCDFC0051D19A /* MYGrumpyCat.m */,
+				00105B4A1B3E11BD0051D19A /* MYTrollLabel.h */,
+				00105B4B1B3E11BD0051D19A /* MYTrollLabel.m */,
 			);
-			name = Models;
+			name = Sprites;
 			path = ..;
 			sourceTree = "<group>";
 		};
 		715C1CDF1B3B58F500BC51B3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7157F7E51B39962D008211D8 /* AppDelegate.h */,
+				7157F7E61B39962D008211D8 /* AppDelegate.m */,
 				7157F8091B399A4D008211D8 /* GameScene.h */,
 				7157F80A1B399A4D008211D8 /* GameScene.m */,
 			);
@@ -296,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00105B4C1B3E11BD0051D19A /* MYTrollLabel.m in Sources */,
 				715C1CE31B3B764B00BC51B3 /* MYSpaceship.m in Sources */,
 				7157F7E71B39962D008211D8 /* AppDelegate.m in Sources */,
 				715C1CEA1B3C313B00BC51B3 /* MYScoreboard.m in Sources */,

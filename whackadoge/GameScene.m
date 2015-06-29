@@ -12,6 +12,7 @@
 #import "MYScoreboard.h"
 #import "MYBackground.h"
 #import "MYGrumpyCat.h"
+#import "MYTrollLabel.h"
 
 @interface GameScene () <SKPhysicsContactDelegate>
 @property (nonatomic, strong)   NSMutableArray  *explosionTextures;
@@ -19,6 +20,7 @@
 @property (nonatomic, strong)   MYBackground    *background;
 @property (nonatomic)           CGFloat         spawnInterval;
 @property (nonatomic)           BOOL            sceneHasChanged;
+@property (nonatomic)           NSUInteger      streakCount;
 
 @end
 
@@ -29,6 +31,7 @@
 {
     self = [super initWithSize:size];
     if (self){
+        self.streakCount = 0;
         self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
@@ -42,10 +45,6 @@
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:self.spawnInterval]]]] withKey:@"spawnDoge"];
         
         [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnGrumpyCat) onTarget:self], [SKAction waitForDuration:1]]]] withKey:@"spawnGrumpyCat"];
-        
-        // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
-        //_background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
-        //[self addChild:_background];
         
         // Load Textures
         SKTextureAtlas *explosionAtlas = [SKTextureAtlas atlasNamed:@"EXPLOSION"];
@@ -73,7 +72,7 @@
 
 -(void)spawnDogeWithInterval:(CGFloat)spawnInterval
 {
-    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:spawnInterval]]]] withKey:@"spawnDoge"];
+    [self runAction:[SKAction repeatActionForever:[SKAction sequence:@[[SKAction performSelector:@selector(spawnDoge) onTarget:self], [SKAction waitForDuration:self.spawnInterval]]]] withKey:@"spawnDoge"];
 }
 
 -(void)spawnDoge // Spawns doge in random point on the screen
@@ -154,6 +153,22 @@
             [self fadeInBackgroundWithScore:self.scoreboard.score];
             //increment spawn interval for every succesful scoring
             self.spawnInterval-= 0.05;
+            
+            //If you made a succesful tap, then increase streak count
+            self.streakCount++;
+            
+            
+            if (self.streakCount>2)
+            {
+                NSLog(@"Streak occured");
+                MYTrollLabel *wow = [[MYTrollLabel alloc]initWithString:@"wow" color:[UIColor redColor]horizontalBoundrary:self.size.width verticalBoundrary:self.size.height];
+                //SKLabelNode *wow = [SKLabelNode labelNodeWithText:@"Wow"];
+                [self addChild:wow];
+                
+                self.streakCount = 0;
+            }
+            
+            //EVERY TIME the scene is changed you need change the sceneHasChanged flag so the update function doesn't try and render every single action, since not every frame needs to udpdate the action qeue.
             self.sceneHasChanged = YES;
         }
     }
