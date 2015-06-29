@@ -8,7 +8,6 @@
 
 #import "GameScene.h"
 #import "MYDoge.h"
-#import "MYSpaceship.h"
 #import "MYScoreboard.h"
 #import "MYBackground.h"
 #import "MYGrumpyCat.h"
@@ -21,6 +20,7 @@
 @property (nonatomic)           CGFloat         spawnInterval;
 @property (nonatomic)           BOOL            sceneHasChanged;
 @property (nonatomic)           NSUInteger      streakCount;
+@property (nonatomic, strong)   MYTrollLabel    *trollLabel;
 
 @end
 
@@ -83,15 +83,7 @@
     [myDoge runAction:myDoge.actionSequence];
 }
 
--(void)spawnSpaceship // Spawns spaceship outside of screen bounds
-{
-    MYSpaceship *mySpaceship = [[MYSpaceship alloc]initWithImageNamed:@"Spaceship" width:self.size.width height:self.size.height];
-    [self addChild:mySpaceship];
-    
-    [mySpaceship runAction:mySpaceship.actionSequence];
-}
-
--(void)spawnGrumpyCat // Spawns spaceship outside of screen bounds
+-(void)spawnGrumpyCat
 {
     MYGrumpyCat *myGrumpyCat = [[MYGrumpyCat alloc]initWithImageNamed:@"GrumpyCatHead" width:self.size.width height:self.size.height];
     [self addChild:myGrumpyCat];
@@ -112,7 +104,7 @@
         firstBody = contact.bodyB;
         secondBody = contact.bodyA;
     }
-    if ((firstBody.categoryBitMask & spaceshipCategory) != 0){
+    if ((firstBody.categoryBitMask & grumpyCatCategory) != 0){
         
         SKNode *grumpyCat = (contact.bodyA.categoryBitMask & grumpyCatCategory) ? contact.bodyA.node : contact.bodyB.node;
         SKNode *doge = (contact.bodyA.categoryBitMask & grumpyCatCategory) ? contact.bodyB.node : contact.bodyA.node;
@@ -130,8 +122,6 @@
         SKAction *explosionAction = [SKAction animateWithTextures:_explosionTextures timePerFrame:0.05];
         SKAction *remove = [SKAction removeFromParent];
         [explosion runAction:[SKAction sequence:@[explosionAction,remove]]];
-        
-        
     }
 }
 
@@ -157,14 +147,11 @@
             //If you made a succesful tap, then increase streak count
             self.streakCount++;
             
-            
             if (self.streakCount>2)
             {
-                NSLog(@"Streak occured");
-                MYTrollLabel *wow = [[MYTrollLabel alloc]initWithString:@"wow" color:[UIColor redColor]horizontalBoundrary:self.size.width verticalBoundrary:self.size.height];
-                //SKLabelNode *wow = [SKLabelNode labelNodeWithText:@"Wow"];
-                [self addChild:wow];
-                
+                self.trollLabel = [[MYTrollLabel alloc]initWithWidth:self.size.width height:self.size.height];
+                [self addChild:self.trollLabel];
+                [self.trollLabel runAction:[self.trollLabel display]];
                 self.streakCount = 0;
             }
             
@@ -179,8 +166,8 @@
     if (score == 10)
     {
         // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
-        _background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
-        [self addChild:_background];
+        self.background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];
+        [self addChild:self.background];
     }
 }
 

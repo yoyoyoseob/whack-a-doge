@@ -53,10 +53,10 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 -(SKAction *)returnActionSequence
 {
     SKAction *appear = [SKAction scaleTo:1.0 duration:0.5];
-    SKAction *disappear = [SKAction scaleTo:0.0 duration:0.5];
     SKAction *waitOnScreen = [SKAction waitForDuration:.5];
-    SKAction *removeFromParent = [SKAction removeFromParent];
     SKAction *moveOnScreen = [SKAction moveTo:CGPointMake(RandomRange(0, self.width), RandomRange(0, self.height - 55)) duration:5];
+    SKAction *disappear = [SKAction scaleTo:0.0 duration:0.5];
+    SKAction *removeFromParent = [SKAction removeFromParent];
     
     SKAction *dogeActionSequence = [SKAction sequence:@[appear, waitOnScreen, moveOnScreen, disappear, removeFromParent]];
     return dogeActionSequence;

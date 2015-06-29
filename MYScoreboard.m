@@ -15,7 +15,7 @@
     self = [super init];
     if (self)
     {
-        UIFont *comicSans = [UIFont fontWithName:@"ComicSansMS" size:32];
+        //UIFont *comicSans = [UIFont fontWithName:@"ComicSansMS" size:32];
 
         self.fontName = @"ComicSansMS";
         self.position = CGPointMake(width/2, height - 55);

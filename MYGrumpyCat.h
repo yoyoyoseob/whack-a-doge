@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "MYDoge.h"
 
-static const uint8_t grumpyCatCategory = 2;
+static const uint8_t grumpyCatCategory = 1;
 
 @interface MYGrumpyCat : SKSpriteNode
 @property (nonatomic, strong) SKAction *actionSequence;

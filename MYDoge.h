@@ -7,10 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "MYSpaceship.h"
 #import "MYGrumpyCat.h"
 
-static const uint8_t dogeCategory = 1;
+static const uint8_t dogeCategory = 2;
 
 @interface MYDoge : SKSpriteNode
 @property (nonatomic, strong) SKAction *actionSequence;

@@ -8,22 +8,12 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-
 @interface MYTrollLabel : SKLabelNode
+//@property (nonatomic, strong) SKAction *actionSequence;
 
-@property   (strong, nonatomic) NSString        *text;
-@property   (nonatomic)         CGFloat         horizontalBoundrary;
-@property   (nonatomic)         CGFloat         verticalBounrary;
+-(instancetype)initWithWidth:(CGFloat)width height:(CGFloat)height;
 
-
--(instancetype)initWithString:(NSString *)text
-                        color:(UIColor *)color
-          horizontalBoundrary:(CGFloat)horizontalBoundrary
-            verticalBoundrary:(CGFloat)verticalBoundrary;
-
--(instancetype) init;
-
--(SKAction *)   display;
+-(SKAction *)display;
 
 
 @end

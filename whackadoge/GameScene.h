@@ -8,9 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-//static const uint8_t spaceshipCategory = 1;
-//static const uint8_t dogeCategory = 2;
-
 @interface GameScene : SKScene
 
 @end
