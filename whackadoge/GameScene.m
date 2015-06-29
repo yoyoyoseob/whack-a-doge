@@ -150,6 +150,7 @@
             if (self.streakCount>2)
             {
                 self.trollLabel = [[MYTrollLabel alloc]initWithWidth:self.size.width height:self.size.height];
+                [self.trollLabel updateToRandomTrollText];
                 [self addChild:self.trollLabel];
                 [self.trollLabel runAction:[self.trollLabel display]];
                 self.streakCount = 0;

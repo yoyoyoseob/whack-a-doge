@@ -15,5 +15,7 @@
 
 -(SKAction *)display;
 
+-(void)updateToRandomTrollText;
+
 
 @end

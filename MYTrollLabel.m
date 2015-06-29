@@ -14,6 +14,12 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     return floorf(((double)arc4random() / ARC4RANDOM_MAX) * (max - min) + min);
 }
 
+@interface MYTrollLabel ()
+
+@property (strong, nonatomic) NSArray *trollTexts;
+
+@end
+
 @implementation MYTrollLabel
 
 -(instancetype)initWithWidth:(CGFloat)width height:(CGFloat)height
@@ -29,7 +35,12 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         self.fontColor = [UIColor whiteColor];
         self.fontSize = 30;
         self.zPosition = 1;
-        self.text = @"wow";
+        
+        _trollTexts = @[@"Wow.",@"amaze",@"vury skil", @"such ponts",@"excite",@"so scare", @"WOW", @"Amaze", @"much kat", @"w00f", @"very sdeep", @"much fast", @"doge style ;-)", @"doge wid it", @"Wow.", @"v3ry gamplay"];
+        
+        
+        
+        
         
         //_actionSequence = [SKAction sequence:@[[self display]]];
     }
@@ -49,6 +60,12 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     SKAction *displaySequence = [SKAction sequence:@[fadeInAction, wiggleWiggle, waitForDuration, fadeOutAction, removeFromParent]];
     
     return displaySequence;
+}
+
+-(void)updateToRandomTrollText
+{
+    self.text = self.trollTexts[(NSUInteger) RandomRange(0, self.trollTexts.count)];
+    //TODO: add random colors as well
 }
 
 @end
