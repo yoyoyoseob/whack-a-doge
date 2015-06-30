@@ -8,6 +8,11 @@
 
 #import "GameViewController.h"
 #import "GameScene.h"
+#import "AVFoundation/AVFoundation.h"
+
+@interface GameViewController ()
+
+@end
 
 @implementation GameViewController
 
@@ -27,6 +32,8 @@
         
         // Presents the created scene
         [skView presentScene:scene];
+        
+
     }
 }
 

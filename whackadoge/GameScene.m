@@ -34,6 +34,7 @@
 @property (nonatomic)           BOOL            sceneHasChanged;
 @property (nonatomic)           NSUInteger      streakCount;
 @property (nonatomic, strong)   MYTrollLabel    *trollLabel;
+@property (nonatomic, strong)   AVAudioPlayer   *audioPlayer;
 
 @end
 
@@ -67,6 +68,13 @@
             SKTexture *texture = [explosionAtlas textureNamed:name];
             [_explosionTextures addObject:texture];
         }
+        
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                             pathForResource:@"Cutting It Fine"
+                                             ofType:@"mp3"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+        self.audioPlayer.numberOfLoops = -1;
+        [self.audioPlayer play];
     }
     return self;
 }
