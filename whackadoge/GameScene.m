@@ -6,6 +6,18 @@
 //  Copyright (c) 2015 Yoseob Lee. All rights reserved.
 //
 
+//TODO: enlarge grumpycat
+//TODO: create pause and off screen enu
+//TODO: fix timing of trollLabels
+//TODO: add random colors to troll labels
+//TODO: make initial background fade in earlier
+//TODO: add new backgrounds to transition into
+//TODO: add succesful hit image for doge
+//TODO: add buffer space for doge spawns
+//TODO: comment out node and fps counters
+//TODO: add backing music
+
+
 #import "GameScene.h"
 #import "MYDoge.h"
 #import "MYScoreboard.h"

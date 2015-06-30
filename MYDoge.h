@@ -15,5 +15,6 @@ static const uint8_t dogeCategory = 2;
 @property (nonatomic, strong) SKAction *actionSequence;
 
 -(instancetype)initWithImageNamed:(NSString *)name width:(CGFloat)width height:(CGFloat)height;
+-(void)changeDogeImageToAngry;
 
 @end

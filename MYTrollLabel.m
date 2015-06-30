@@ -17,6 +17,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 @interface MYTrollLabel ()
 
 @property (strong, nonatomic) NSArray *trollTexts;
+@property (strong, nonatomic) NSArray *trollColors;
 
 @end
 
@@ -31,13 +32,17 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         
         self.alpha = 0;
         self.fontName = @"ComicSansMS";
-        self.position = CGPointMake(RandomRange(0, width), RandomRange(0, height));
+        self.position = CGPointMake(RandomRange(80, width-80), RandomRange(10, height-60));
         self.fontColor = [UIColor whiteColor];
-        self.fontSize = 30;
+        self.fontSize = 32;
         self.zPosition = 1;
         
-        _trollTexts = @[@"Wow.",@"amaze",@"vury skil", @"such ponts",@"excite",@"so scare", @"WOW", @"Amaze", @"much kat", @"w00f", @"very sdeep", @"much fast", @"doge style ;-)", @"doge wid it", @"Wow.", @"v3ry gamplay"];
+        _trollTexts = @[@"Wow.",@"amaze",@"vury skil", @"such ponts",@"excite",@"so scare",
+                        @"WOW", @"Amaze", @"much kat", @"w00f", @"very sdeep", @"much fast",
+                        @"doge style ;-)", @"doge wid it", @"Wow.", @"v3ry gamplay"];
         
+        _trollColors = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],
+                         [UIColor magentaColor],[UIColor whiteColor],[UIColor cyanColor]];
         
         
         
@@ -49,23 +54,30 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 
 -(SKAction *)display
 {
-    SKAction *wiggleClockwise   = [SKAction rotateByAngle:M_PI/6 duration:0.2];
-    SKAction *wiggleCClockwise  = [SKAction rotateByAngle:-M_PI/6 duration:0.2];
-    SKAction *wiggleWiggle      = [SKAction sequence:@[wiggleClockwise,wiggleCClockwise,wiggleClockwise,wiggleCClockwise]];
+    //Create action sequence to wiggle the label
+    SKAction *initialWiggle         = [SKAction rotateByAngle:M_PI/12 duration:0.1];
+    SKAction *wiggleClockwise       = [SKAction rotateByAngle:-M_PI/6 duration:0.1];
+    SKAction *wiggleAntiClockwise   = [SKAction rotateByAngle:M_PI/6 duration:0.1];
+    SKAction *wiggleWiggle          = [SKAction sequence:@[initialWiggle,wiggleClockwise,
+                                                           wiggleAntiClockwise,wiggleClockwise,
+                                                           wiggleAntiClockwise,wiggleClockwise,
+                                                           initialWiggle]];
     
-    SKAction *fadeInAction = [SKAction fadeInWithDuration:1];
-    SKAction *waitForDuration = [SKAction waitForDuration:2];
-    SKAction *fadeOutAction = [SKAction fadeOutWithDuration:1];
+    //create the complete action sequence
+    SKAction *fadeInAction = [SKAction fadeInWithDuration:.3];
+    SKAction *waitForDuration = [SKAction waitForDuration:0.5];
+    SKAction *fadeOutAction = [SKAction fadeOutWithDuration:.5];
     SKAction *removeFromParent = [SKAction removeFromParent];
-    SKAction *displaySequence = [SKAction sequence:@[fadeInAction, wiggleWiggle, waitForDuration, fadeOutAction, removeFromParent]];
+    SKAction *displaySequence = [SKAction sequence:@[fadeInAction, wiggleWiggle, waitForDuration,
+                                                     fadeOutAction, removeFromParent]];
     
     return displaySequence;
 }
 
 -(void)updateToRandomTrollText
 {
-    self.text = self.trollTexts[(NSUInteger) RandomRange(0, self.trollTexts.count)];
-    //TODO: add random colors as well
+    self.text  = self.trollTexts[(NSUInteger) RandomRange(0, self.trollTexts.count)];
+    self.fontColor = self.trollColors[(NSUInteger) RandomRange(0, self.trollColors.count)];
 }
 
 @end

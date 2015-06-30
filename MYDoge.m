@@ -62,4 +62,10 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
     return dogeActionSequence;
 }
 
+-(void)changeDogeImageToAngry
+{
+    [self setTexture:[SKTexture textureWithImage:@"DogeAngry"]];
+    //spaceholder if scaling is needed
+}
+
 @end

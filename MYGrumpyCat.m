@@ -30,7 +30,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         _width = width;
         _height = height;
         
-        self.size = CGSizeMake(50, 44); // Default size is 394 x 347
+        self.size = CGSizeMake(60, 55); // Default size is 394 x 347
         self.name = @"grumpyCat";
         self.zPosition = 1;
         
