@@ -12,6 +12,7 @@
 		00105B491B3E02620051D19A /* ComicSansMS.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00105B481B3E02620051D19A /* ComicSansMS.ttf */; };
 		00105B4C1B3E11BD0051D19A /* MYTrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 00105B4B1B3E11BD0051D19A /* MYTrollLabel.m */; };
 		00105B4E1B4236B20051D19A /* DogeAngry.png in Resources */ = {isa = PBXBuildFile; fileRef = 00105B4D1B4236B20051D19A /* DogeAngry.png */; };
+		00105BB61B4347F10051D19A /* background2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 00105BB51B4347F10051D19A /* background2.atlas */; };
 		710300AC1B3C6F2D002B7E2E /* MYBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 710300AB1B3C6F2D002B7E2E /* MYBackground.m */; };
 		710300B01B3C7779002B7E2E /* Background.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 710300AF1B3C7779002B7E2E /* Background.atlas */; };
 		7157F7E41B39962D008211D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157F7E31B39962D008211D8 /* main.m */; };
@@ -46,6 +47,7 @@
 		00105B4A1B3E11BD0051D19A /* MYTrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTrollLabel.h; sourceTree = "<group>"; };
 		00105B4B1B3E11BD0051D19A /* MYTrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTrollLabel.m; sourceTree = "<group>"; };
 		00105B4D1B4236B20051D19A /* DogeAngry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DogeAngry.png; sourceTree = "<group>"; };
+		00105BB51B4347F10051D19A /* background2.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = background2.atlas; sourceTree = "<group>"; };
 		710300AA1B3C6F2D002B7E2E /* MYBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBackground.h; sourceTree = "<group>"; };
 		710300AB1B3C6F2D002B7E2E /* MYBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBackground.m; sourceTree = "<group>"; };
 		710300AF1B3C7779002B7E2E /* Background.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Background.atlas; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				00105B4D1B4236B20051D19A /* DogeAngry.png */,
 				00105B481B3E02620051D19A /* ComicSansMS.ttf */,
+				00105BB51B4347F10051D19A /* background2.atlas */,
 				710300AF1B3C7779002B7E2E /* Background.atlas */,
 				715C1CE61B3B7E9900BC51B3 /* EXPLOSION.atlas */,
 				7157F7E21B39962D008211D8 /* Info.plist */,
@@ -278,6 +281,7 @@
 				710300B01B3C7779002B7E2E /* Background.atlas in Resources */,
 				7157F7F11B39962D008211D8 /* Images.xcassets in Resources */,
 				00105B491B3E02620051D19A /* ComicSansMS.ttf in Resources */,
+				00105BB61B4347F10051D19A /* background2.atlas in Resources */,
 				715C1CE71B3B7E9900BC51B3 /* EXPLOSION.atlas in Resources */,
 				7157F7E91B39962D008211D8 /* art.scnassets in Resources */,
 				00105B4E1B4236B20051D19A /* DogeAngry.png in Resources */,

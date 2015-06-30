@@ -12,6 +12,7 @@
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;
 @property (nonatomic, strong) NSMutableArray *backgroundGIF;
+@property (nonatomic, strong) NSMutableArray *backgroundGIF2;
 
 @end
 
@@ -32,14 +33,28 @@
         self.yScale = 1.67;
         self.alpha = 0;
         
-        SKTextureAtlas *backgroundAtlas = [SKTextureAtlas atlasNamed:name];
-        NSArray *textureNames = [backgroundAtlas textureNames];
+        
+        //load all texture files for all backgrounds
+        SKTextureAtlas  *backgroundAtlas = [SKTextureAtlas atlasNamed:name];
+        NSArray         *textureNames = [backgroundAtlas textureNames];
+        SKTextureAtlas  *backgroundAtlas2 = [SKTextureAtlas atlasNamed:@"background2"];
+        NSArray         *textureNames2 = [backgroundAtlas2 textureNames];
+        
         _backgroundGIF = [NSMutableArray new];
+        _backgroundGIF2 = [NSMutableArray new];
         for (NSString *name in textureNames)
         {
             SKTexture *texture = [backgroundAtlas textureNamed:name];
             [_backgroundGIF addObject:texture];
         }
+        for (NSString *name in textureNames2)
+        {
+            SKTexture *texture = [backgroundAtlas2 textureNamed:name];
+            [_backgroundGIF2 addObject:texture];
+        }
+        
+        
+        
         [self animateBackground];
     }
     return self;
@@ -50,9 +65,19 @@
     SKAction *fadeIn = [SKAction fadeInWithDuration:60];
     [self runAction:fadeIn];
     
-    SKAction *animation = [SKAction repeatActionForever:[SKAction animateWithTextures:_backgroundGIF timePerFrame:0.05f resize:NO restore:YES]];
+    SKAction *animation = [SKAction repeatActionForever:[SKAction animateWithTextures:_backgroundGIF timePerFrame:0.03f resize:NO restore:YES]];
     
     [self runAction:[SKAction sequence:@[animation]] withKey:@"animateBackground"];
+}
+
+-(void)transitionToNextBackground
+{
+    [self runAction:[SKAction fadeOutWithDuration:2]];
+    SKAction *fadeInNewBG = [SKAction fadeInWithDuration:10];
+    SKAction *changeBG = [SKAction animateWithTextures:_backgroundGIF2 timePerFrame:.02f resize:NO restore:YES];
+    SKAction *BGSequence = [SKAction repeatActionForever:changeBG];
+    [self runAction:[SKAction fadeInWithDuration:10]];
+    [self runAction:BGSequence];
 }
 
 @end

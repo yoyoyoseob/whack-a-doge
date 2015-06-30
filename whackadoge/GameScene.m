@@ -165,13 +165,14 @@
             //If you made a succesful tap, then increase streak count
             self.streakCount++;
             
-            if (self.streakCount>2)
+            if (self.streakCount>12)
             {
                 self.trollLabel = [[MYTrollLabel alloc]initWithWidth:self.size.width height:self.size.height];
                 [self.trollLabel updateToRandomTrollText];
                 [self addChild:self.trollLabel];
                 [self.trollLabel runAction:[self.trollLabel display]];
                 self.streakCount = 0;
+                [self.background transitionToNextBackground];
             }
             
             //EVERY TIME the scene is changed you need change the sceneHasChanged flag so the update function doesn't try and render every single action, since not every frame needs to udpdate the action qeue.

@@ -11,5 +11,7 @@
 @interface MYBackground : SKSpriteNode
 
 -(instancetype)initWithImageNamed:(NSString *)name width:(CGFloat)width height:(CGFloat)height;
+-(void)transitionToNextBackground;
+
 
 @end
