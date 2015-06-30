@@ -32,14 +32,14 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         
         self.alpha = 0;
         self.fontName = @"ComicSansMS";
-        self.position = CGPointMake(RandomRange(80, width-80), RandomRange(10, height-60));
+        self.position = CGPointMake(RandomRange(100, width-100), RandomRange(10, height-60));
         self.fontColor = [UIColor whiteColor];
-        self.fontSize = 32;
+        self.fontSize = 42;
         self.zPosition = 1;
         
         _trollTexts = @[@"Wow.",@"amaze",@"vury skil", @"such ponts",@"excite",@"so scare",
-                        @"WOW", @"Amaze", @"much kat", @"w00f", @"very sdeep", @"much fast",
-                        @"doge style ;-)", @"doge wid it", @"Wow.", @"v3ry gamplay"];
+                        @"WOW", @"Amaze", @"much kat", @"w00f", @"much fast",
+                        @"doge style ;-)", @"doge wid it"];
         
         _trollColors = @[[UIColor redColor],[UIColor yellowColor],[UIColor greenColor],
                          [UIColor magentaColor],[UIColor whiteColor],[UIColor cyanColor]];

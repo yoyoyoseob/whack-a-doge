@@ -135,6 +135,10 @@
         SKAction *explosionAction = [SKAction animateWithTextures:_explosionTextures timePerFrame:0.05];
         SKAction *remove = [SKAction removeFromParent];
         [explosion runAction:[SKAction sequence:@[explosionAction,remove]]];
+        
+        //increase spawn interval and update scene has changed flag so the update function calls
+        self.spawnInterval+= 0.1;
+        self.sceneHasChanged = YES;
     }
 }
 
