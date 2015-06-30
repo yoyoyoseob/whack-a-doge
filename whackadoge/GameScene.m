@@ -16,6 +16,7 @@
 //TODO: add buffer space for doge spawns
 //TODO: comment out node and fps counters
 //TODO: add backing music
+//TODO: add decrementer for the streakCounter
 
 
 #import "GameScene.h"
@@ -92,7 +93,7 @@
     MYDoge *myDoge = [[MYDoge alloc]initWithImageNamed:@"doge" width:self.size.width height:self.size.height];
     [self addChild:myDoge];
     
-    [myDoge runAction:myDoge.actionSequence];
+    [myDoge runAction:[myDoge appearMoveDisapear:0.3 timeToMove:self.spawnInterval timeToDisappear:0.3]];
 }
 
 -(void)spawnGrumpyCat
@@ -144,6 +145,7 @@
     CGPoint touchPoint = [touchedNode locationInNode:self]; // (x, y) of where the touch was
     
     SKNode *node = [self nodeAtPoint:touchPoint]; // Returns the node at touch
+    //MYDoge *touchedDoge = [self nodeAtPoint:touchPoint];
     
     if ([node containsPoint:touchPoint])
     {
@@ -176,7 +178,7 @@
 
 -(void)fadeInBackgroundWithScore:(NSInteger)score
 {
-    if (score == 10)
+    if (score == 2)
     {
         // Background will spawn after [X] condition has been met - starts off pretty tame (MOVE OUT OF INITIALIZER)
         self.background = [[MYBackground alloc]initWithImageNamed:@"Background" width:self.size.width height:self.size.height];

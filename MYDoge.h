@@ -16,5 +16,6 @@ static const uint8_t dogeCategory = 2;
 
 -(instancetype)initWithImageNamed:(NSString *)name width:(CGFloat)width height:(CGFloat)height;
 -(void)changeDogeImageToAngry;
+-(SKAction *)appearMoveDisapear:(CGFloat)timeToAppear timeToMove:(CGFloat)timeToMove timeToDisappear:(CGFloat)timeToDisappear;
 
 @end

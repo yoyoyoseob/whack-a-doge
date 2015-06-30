@@ -30,7 +30,7 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
         _height = height;
         
         self.size = CGSizeMake(65, 68.9);
-        self.position = CGPointMake(RandomRange(0, _width), RandomRange(0, _height - 55));
+        self.position = CGPointMake(RandomRange(30, _width-30), RandomRange(30, _height - 60));
         self.zPosition = 1;
         
         self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.size];
@@ -53,13 +53,26 @@ static inline CGFloat RandomRange(CGFloat min, CGFloat max){
 -(SKAction *)returnActionSequence
 {
     SKAction *appear = [SKAction scaleTo:1.0 duration:0.5];
-    SKAction *waitOnScreen = [SKAction waitForDuration:.5];
+    SKAction *waitOnScreen = [SKAction waitForDuration:RandomRange(0, 0.3)];
     SKAction *moveOnScreen = [SKAction moveTo:CGPointMake(RandomRange(0, self.width), RandomRange(0, self.height - 55)) duration:5];
     SKAction *disappear = [SKAction scaleTo:0.0 duration:0.5];
     SKAction *removeFromParent = [SKAction removeFromParent];
     
     SKAction *dogeActionSequence = [SKAction sequence:@[appear, waitOnScreen, moveOnScreen, disappear, removeFromParent]];
     return dogeActionSequence;
+}
+
+-(SKAction *)appearMoveDisapear:(CGFloat)timeToAppear timeToMove:(CGFloat)timeToMove timeToDisappear:(CGFloat)timeToDisappear
+{
+    SKAction *appear = [SKAction scaleTo:1.0 duration:timeToAppear];
+    SKAction *waitOnScreen = [SKAction waitForDuration:RandomRange(0, 0.3)];
+    SKAction *moveOnScreen = [SKAction moveTo:CGPointMake(RandomRange(0, self.width), RandomRange(0, self.height - 55)) duration:timeToMove];
+    SKAction *disappear = [SKAction scaleTo:0.0 duration:timeToDisappear];
+    SKAction *removeFromParent = [SKAction removeFromParent];
+    
+    SKAction *dogeActionSequence = [SKAction sequence:@[appear, waitOnScreen, moveOnScreen, disappear, removeFromParent]];
+    return dogeActionSequence;
+
 }
 
 -(void)changeDogeImageToAngry
